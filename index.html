@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>4FRI Landscape Pattern Analysis</title>
+    <meta charset="utf-8">
+
+    <!-- Support for browsers on mobile phones. -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Google Web Fonts. -->
+    <link href='https://fonts.googleapis.com/css?family=Asap|Roboto+Condensed'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS styles for our application. -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Style sheet for legend -->
+    <link rel="stylesheet" href="/static/legend.css">
+
+    <!-- The Google JavaScript loader tool (for the Maps, Charts APIs). -->
+    <script src="https://www.google.com/jsapi"></script>
+
+    <!-- For opacity slider -->
+    <script src="/static/ExtDraggableObject.js"></script>
+    <script src="/static/slider.js"></script>
+
+    <!-- For layer control -->
+    <script src="/static/layer.js"></script>
+
+    <!-- Our custom JavaScript -->
+    <script src="/static/script.js"></script>
+
+  </head>
+  <body>
+
+    <!-- The DOM of our application. -->
+    <div class="mapper">
+
+      <!-- The title of the application. -->
+      <h1>4FRI Landscape Pattern Analysis</h1>
+
+      <!-- A container which the Maps API will populate with a map. -->
+      <div class="map"></div>
+
+      <!-- CSP Logo -->
+      <a href="https://www.csp-inc.org">
+      <img class="csp-logo"
+             alt="Conservation Science Partners"
+             src="/static/CSP_logo_pronghorn_BW.png">
+      </a>
+
+      <!-- mini CSP Logo -->
+      <a href="https://www.csp-inc.org">
+      <img class="csp-mini-logo"
+             alt="Conservation Science Partners"
+             src="/static/CSP_logo_pronghorn_BW_no_text.png">
+      </a>
+
+      <div class='legend' id='rgb' style='background:#ffffff00'>
+        <div class='legend-title'></div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='classification' style='background:#ffffff'>
+        <div class='legend-title'>Class</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#238b45;'><!-- --></span>Canopy</li>
+            <li><span style='background:#252525;'><!-- --></span>Shadow</li>
+            <li><span style='background:#d9f0a3;'><!-- --></span>Other</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='frag_set_1' style='background:#ffffff'>
+        <div class='legend-title'>Values<br>(98% stretch)</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#E41A1C;'><!-- --></span>High</li>
+            <li><span style='background:#EA5348;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#F18C74;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#F8C5A0;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFFFCC;'><!-- --></span>Low</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='frag_set_2' style='background:#ffffff'>
+        <div class='legend-title'>Values<br>(98% stretch)</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#377EB8;'><!-- --></span>High</li>
+            <li><span style='background:#699EBD;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#9BBEC2;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#CDDEC7;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFFFCC;'><!-- --></span>Low</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='frag_set_3' style='background:#ffffff'>
+        <div class='legend-title'>Values<br>(98% stretch)</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#4DAF4A;'><!-- --></span>High</li>
+            <li><span style='background:#79C36A;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#A5D78B;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#D2EBAB;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFFFCC;'><!-- --></span>Low</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='frag_set_4' style='background:#ffffff'>
+        <div class='legend-title'>Values<br>(98% stretch)</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#984EA3;'><!-- --></span>High</li>
+            <li><span style='background:#B17AAD;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#CBA6B7;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#E5D2C1;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFFFCC;'><!-- --></span>Low</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='frag_set_5' style='background:#ffffff'>
+        <div class='legend-title'>Values<br>(98% stretch)</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#FF7F00;'><!-- --></span>High</li>
+            <li><span style='background:#FF9F33;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFBF66;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFDF99;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFFFCC;'><!-- --></span>Low</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='frag_set_6' style='background:#ffffff'>
+        <div class='legend-title'>Values<br>(98% stretch)</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#A65628;'><!-- --></span>High</li>
+            <li><span style='background:#BC8051;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#D2AA7A;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#E8D4A3;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFFFCC;'><!-- --></span>Low</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='legend' id='frag_set_7' style='background:#ffffff'>
+        <div class='legend-title'>Values<br>(98% stretch)</div>
+        <div class='legend-scale'>
+          <ul class='legend-labels'>
+            <li><span style='background:#252525;'><!-- --></span>High</li>
+            <li><span style='background:#5B5B4E;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#929278;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#C8C8A2;'><!-- --></span>&nbsp;</li>
+            <li><span style='background:#FFFFCC;'><!-- --></span>Low</li>
+          </ul>
+        </div>
+      </div>
+
+    <!-- Boot our JavaScript once the body has loaded. -->
+    <script>
+      mapper.boot(
+          '{{ ids | safe }}',
+          '{{ maps_key | safe }}');
+    </script>
+
+  </body>
+</html>

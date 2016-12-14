@@ -1,0 +1,187 @@
+/** User interface styles for the Trendy Lights app. */
+
+.template {
+  display: none;
+}
+
+/* Shared across all screen sizes. */
+
+.mapper h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  position: absolute;
+  z-index: 1;
+  margin: 0px;
+  color: white;
+  text-shadow: 0px 0px 20px black;
+}
+
+html,
+body,
+.mapper,
+.mapper .map {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.mapper .panel {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0px 0px 20px black;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.mapper .panel h2 {
+  margin: 0px;
+  padding-bottom: 10px;
+}
+
+.mapper .panel .details {
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.mapper .panel .error {
+  display: none;
+}
+
+.mapper .csp-logo {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  right: 50px;
+  margin-left: -100px;
+  width: 200px;
+}
+
+.mapper .csp-mini-logo {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  right: 50px;
+  margin-left: -100px;
+  width: 60px;
+}
+
+.mapper form {
+  font-family: 'Asap', sans-serif;
+}
+
+.mapper fieldset {
+  margin: 1px;
+  padding: 2px;
+}
+
+.mapper legend {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.mapper .legend {
+  position: absolute;
+  opacity: 0.9;
+  z-index: 1;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 4px;
+  zoom: 0.8;
+  -moz-transform: scale(0.8);
+}
+
+/* Small screens. */
+
+@media (max-width: 900px) {
+  .mapper h1 {
+    top: 5px;
+    font-size: 20px;
+    left: 5px;
+  }
+
+  .mapper .panel {
+    width: 100%;
+    bottom: 0px;
+    height: 50px;
+  }
+
+  .mapper .panel .details {
+    visibility: hidden;
+    max-height: 400px;
+    padding-right: 10px;
+  }
+
+  .mapper .panel .close {
+    display: none;
+  }
+
+  .mapper .panel .toggler {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .mapper .panel.expanded .details  {
+    visibility: visible;
+  }
+
+  .mapper .panel.expanded {
+    height: 278px;
+  }
+
+  .mapper .csp-logo {
+    display: none;
+  }
+
+  .mapper .csp-mini-logo {
+    display: block;
+  }
+
+  .mapper .legend {
+    zoom: 0.7;
+    -moz-transform: scale(0.7);
+  }
+}
+
+/* Large screens. */
+
+@media (min-width: 900px) {
+  .mapper h1 {
+    left: 10px;
+    top: 5px;
+    font-size: 40px;
+    opacity: .98;
+  }
+
+  .mapper .panel {
+    width: 400px;
+    left: 40px;
+    top: 126px;
+    padding: 14px;
+    opacity: .98;
+    border-radius: 4px;
+  }
+
+  .mapper .panel .close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+  }
+
+  .mapper .panel .toggler {
+    display: none;
+  }
+
+  .mapper .csp-logo {
+    display: block;
+  }
+
+  .mapper .csp-mini-logo {
+    display: none;
+  }
+}

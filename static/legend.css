@@ -1,0 +1,43 @@
+.legend {
+  font-family: 'Asap', sans-serif;
+  padding: 6px;
+  display: none;
+}
+
+.legend .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  }
+
+.legend .legend-scale ul {
+  margin: 0;
+  margin-bottom: 3px;
+  padding: 0;
+  float: left;
+  list-style: none;
+  }
+  
+.legend .legend-scale ul li {
+  font-size: 18px;
+  list-style: none;
+  margin-left: 0;
+  line-height: 22px;
+  margin-bottom: 3px;
+  }
+
+.legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 20px;
+  width: 35px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+  }
+
+.legend .disclaimer {
+  float: left;
+  font-size: 16px;
+}
