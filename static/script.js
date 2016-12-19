@@ -177,13 +177,13 @@ mapper.App.prototype.createMap = function(mapTypes) {
   fragMetSfTitle.addEventListener('click', toggleFieldsetVisibility);
   fragMetSgTitle.addEventListener('click', toggleFieldsetVisibility);
 
-  var firstCoverLayerIndex = 2;
-  var firstFragMetSaLayerIndex = 3;
-  var firstFragMetSbLayerIndex = 4;
-  var firstFragMetScLayerIndex = 5;
-  var firstFragMetSdLayerIndex = 9;
-  var firstFragMetSeLayerIndex = 10;
-  var firstFragMetSfLayerIndex = 13;
+  var firstCoverLayerIndex = 3;
+  var firstFragMetSaLayerIndex = 4;
+  var firstFragMetSbLayerIndex = 5;
+  var firstFragMetScLayerIndex = 6;
+  var firstFragMetSdLayerIndex = 10;
+  var firstFragMetSeLayerIndex = 11;
+  var firstFragMetSfLayerIndex = 14;
 
   for (var i = 0; i < mapTypes.length; i++) {
     if (i < firstCoverLayerIndex){
